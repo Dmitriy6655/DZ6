@@ -1,3 +1,24 @@
+// Подумать над структурой класса Ноутбук для магазина техники — выделить поля и методы. Реализовать в Java.
+
+// Создать множество ноутбуков.
+
+// Написать метод, который будет запрашивать у пользователя критерий (или критерии) фильтрации и выведет ноутбуки, отвечающие фильтру. Критерии фильтрации можно хранить в Map. Например:
+
+// “Введите цифру, соответствующую необходимому критерию:
+
+// 1 - ОЗУ
+
+// 2 - Объём ЖД
+
+// 3 - Операционная система
+
+// 4 - Цвет …
+
+// Далее нужно запросить минимальные значения для указанных критериев — сохранить параметры фильтрации можно также в Map.
+// Отфильтровать ноутбуки их первоначального множества и вывести проходящие по условиям.
+
+
+
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -8,8 +29,8 @@ import java.util.Set;
 
 public class Task1 {
    public static void main(String[] args) {
-      Notebook notebook1 = new Notebook("Asus", "4", "1000", "Windows", "grey");
-      Notebook notebook2 = new Notebook("Asus", "4", "1000", "Lunex", "black");
+      Notebook notebook1 = new Notebook("Acer", "4", "1000", "Windows", "grey");
+      Notebook notebook2 = new Notebook("HP", "4", "1000", "Lunex", "black");
       Notebook notebook3 = new Notebook("Asus", "4", "2000", "Windows", "black");
       Notebook notebook4 = new Notebook("Asus", "16", "1000", "Windows", "grey");
       Notebook notebook5 = new Notebook("Huawei", "8", "1000", "Windows", "black");
@@ -40,7 +61,7 @@ public class Task1 {
             System.out.println(
                   "Введите цифру, соответствующую необходимому критерию: \n 1 - Название \n 2 - ОЗУ \n 3 - Объем ЖД \n 4 - Операционная система \n 5 - Цвет");
             String key = scanner();
-            System.out.println("Введите значения для выбранного критерия: ");
+            System.out.println("Введите значение для выбранного критерия: ");
             String value = scanner();
 
             resultCriterias.put(key, value);
@@ -93,9 +114,9 @@ public class Task1 {
 
       }
       if (temp.isEmpty()) {
-         System.out.println("По введенным критериям ничего не найдено!");
+         System.out.println("Ноутбук не найден!");
       } else {
-         System.out.println("Вот что мы можем предложить: \n" + temp.toString());
+         System.out.println("Варианты покупки: \n" + temp.toString());
       }
 
    }
